@@ -45,9 +45,10 @@ for (let i = 0; i < timeArray.length; i++) {
     }
     else if(timeVal == hour) {
         textTime[i].classList.add('present');
-    }else {
-        textTime[i].classList.add('past');
     }
+    // else {
+    //     textTime[i].classList.add('past');
+    // }
 };
 
 
@@ -55,12 +56,12 @@ for (i=0; i < textTime.length; i++) {
     var recieve = textTime[i].id;
     textTime[i].value = localStorage.getItem(recieve);
 
-    saveBtn[i].addEventListener('click', function(event){
+    $('.saveBtn')[i].addEventListener('click', function(event){
         event.preventDefault();
         //@ts-ignore
         var parentEl = event.target.parentElement;
-        var textBoxValue = parentEl.querrySelector('.description').value;
-        var keySet = parentEl.querrySelector('.description').id;
+        var textBoxValue = parentEl.querySelector('.description');
+        var keySet = parentEl.querySelector('.description');
         
     });
 };
